@@ -1,3 +1,9 @@
+/**
+ * @description 用來獲取從後端來的起始資料
+ * @author frenkie
+ * @date 2020-06-08
+*/
+
 <script>
 import fetchStartData from "../interface/data/fetchStartData";
 export default {
@@ -33,7 +39,7 @@ export default {
           }
         },
         mapImg: [],
-        item: [],
+        countItem: [],
         mapItem: [],
         propertyItem: [],
         doorDeviceItem: {}

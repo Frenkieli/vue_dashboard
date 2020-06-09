@@ -1,3 +1,9 @@
+/**
+ * @description axios相關接口
+ * @author frenkie
+ * @date 2020-06-08
+ * @param <Strinf> url 除基本網址外的網址
+*/
 <script>
 import axios from "axios";
 export default {

@@ -1,3 +1,8 @@
+/**
+ * @description 用來獲取地圖資料並標準化的接口
+ * @author frenkie
+ * @date 2020-06-08
+*/
 <script>
 import axios from "../module/axiosItem";
 export default {
@@ -9,7 +14,8 @@ export default {
       dashboardProperty: [],
       dashboardMapStyle: [],
       dashboardMapImg: [],
-      dashboardItem: [],
+      dashboardCountTotalItem: [],
+      dashboardCountItem: [],
       dashboardMapItem: [],
       dashboardPropertyItem: [],
       dashboardDoorDeviceItem: {}
@@ -45,7 +51,11 @@ export default {
           } else if (itemID.length === 3) {
             vm.dashboardMapItem.push(v);
           }else if(itemID[0] === "map" && itemID.length === 2){
-            vm.dashboardItem.push(v);
+            if(itemID[1] === 'total'){
+              vm.dashboardCountTotalItem.push(v);
+            }else{
+              vm.dashboardCountItem.push(v);
+            }
           }else if(itemID.length === 1){
             vm.dashboardHome.push(v);
           }
@@ -55,7 +65,8 @@ export default {
           property: vm.dashboardProperty,
           mapStyle: vm.dashboardMapStyle,
           mapImg: vm.dashboardMapImg,
-          item: vm.dashboardItem,
+          countTotalItem: vm.dashboardCountTotalItem,
+          countItem: vm.dashboardCountItem,
           mapItem: vm.dashboardMapItem,
           propertyItem: vm.dashboardPropertyItem,
           doorDeviceItem: vm.dashboardDoorDeviceItem
