@@ -17,7 +17,8 @@ export default {
   },
   methods: {
     fetchStartData() {
-      return this.axiosGet("toilet/toiletInfo/5ea24eec0ea58823cc92b16a").then(res => {
+      // return this.axiosGet("toilet/toiletInfo/5ea24eec0ea58823cc92b16a").then(res => {
+      return this.axiosGet("data.json").then(res => {
         // console.log("獲取啟始資料:");
         // console.log(res.data);
         let dashboardData = res.data;

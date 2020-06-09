@@ -9,7 +9,7 @@ export default {
       // hostname: 'http://localhost',
       // port: '3000/',
       axiosItem: axios.create({
-        baseURL: "http://localhost:3000/"
+        baseURL: location.protocol + '//' + location.hostname + (location.port ? (':' + location.port) : '') + '/'
       })
     };
   },

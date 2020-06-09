@@ -16,7 +16,7 @@
       :style="{
         left: value.style.left + 'px',
         top: value.style.top + 'px',
-      }"></component>
+      }"/>
 
   </div>
 </template>
@@ -30,7 +30,7 @@
 import "./assets/lib/css/reset.css";
 
 //moduleInterface
-import socketItem from "./interface/module/socketItem";
+// import socketItem from "./interface/module/socketItem";
 
 //components
 import systemTimeItem from "./components/mapSystemTime";
@@ -55,7 +55,8 @@ import nowTime from "./model/nowTime";
 // import HelloWorld from './components/HelloWorld.vue'
 export default {
   // extends: socketItem,
-  mixins: [socketItem, getStartData, nowTime],
+  mixins: [getStartData, nowTime],
+  // mixins: [socketItem, getStartData, nowTime],
   name: "App",
   data() {
     return {};
@@ -71,7 +72,7 @@ export default {
   },
   async created() {
     let vm = this;
-    vm.connectSocket();
+    // vm.connectSocket();
     await vm.getStartData().then(()=>{
       console.log('要印的資料', vm.dashboardData)
     });
