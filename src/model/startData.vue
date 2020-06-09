@@ -7,7 +7,31 @@ export default {
     return {
       dashboardData: {
         property: [],
-        mapStyle: [],
+        mapStyle: {
+          background: {
+            bright: 0,
+            color: 0
+          },
+          itemStyle: {
+            background: {
+              bright: 0,
+              color: 0,
+              opacity: 0
+            },
+            border: {
+              bright: 0,
+              color: 0,
+              opacity: 0,
+              width: 0
+            },
+            textStyle: {
+              bright: 0,
+              color: 0,
+              fontSize: 0,
+              opacity: 0
+            }
+          }
+        },
         mapImg: [],
         item: [],
         mapItem: [],

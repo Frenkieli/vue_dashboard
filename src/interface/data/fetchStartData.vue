@@ -5,6 +5,7 @@ export default {
   name: "fetchStartData",
   data() {
     return {
+      dashboardHome: [],
       dashboardProperty: [],
       dashboardMapStyle: [],
       dashboardMapImg: [],
@@ -16,7 +17,7 @@ export default {
   },
   methods: {
     fetchStartData() {
-      this.axiosGet("toilet/toiletInfo/5ea24eec0ea58823cc92b16a").then(res => {
+      return this.axiosGet("toilet/toiletInfo/5ea24eec0ea58823cc92b16a").then(res => {
         // console.log("獲取啟始資料:");
         // console.log(res.data);
         let dashboardData = res.data;
@@ -42,11 +43,14 @@ export default {
             vm.dashboardPropertyItem.push(v);
           } else if (itemID.length === 3) {
             vm.dashboardMapItem.push(v);
-          } else {
+          }else if(itemID[0] === "map" && itemID.length === 2){
             vm.dashboardItem.push(v);
+          }else if(itemID.length === 1){
+            vm.dashboardHome.push(v);
           }
         });
         return {
+          home: vm.dashboardHome,
           property: vm.dashboardProperty,
           mapStyle: vm.dashboardMapStyle,
           mapImg: vm.dashboardMapImg,
@@ -55,6 +59,8 @@ export default {
           propertyItem: vm.dashboardPropertyItem,
           doorDeviceItem: vm.dashboardDoorDeviceItem
         };
+      }).catch((err)=>{
+        console.log('獲取起始資料失敗:' , err)
       });
     }
   }
