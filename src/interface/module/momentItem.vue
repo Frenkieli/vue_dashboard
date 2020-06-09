@@ -1,8 +1,10 @@
-/**
- * @description moment相關接口
- * @author frenkie
- * @date 2020-06-09
-*/
+<!--
+  /**
+  * @description moment相關接口
+  * @author frenkie
+  * @date 2020-06-09
+  */
+-->
 <script>
 import moment from "moment";
 

@@ -1,8 +1,10 @@
-/**
- * @description 公廁類行的組件
- * @author frenkie
- * @date 2020-06-09
-*/
+<!-- 
+  /**
+  * @description 公廁類行的組件
+  * @author frenkie
+  * @date 2020-06-09
+  */
+-->
 <template>
   <div class="map_count">
     男性廁所:
@@ -13,6 +15,7 @@
 </template>
 
 <script>
+
 export default {
   name: "mapCountItem",
 }

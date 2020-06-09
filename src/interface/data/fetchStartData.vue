@@ -1,8 +1,10 @@
-/**
- * @description 用來獲取地圖資料並標準化的接口
- * @author frenkie
- * @date 2020-06-08
-*/
+<!--
+  /**
+  * @description 用來獲取地圖資料並標準化的接口
+  * @author frenkie
+  * @date 2020-06-08
+  */
+-->
 <script>
 import axios from "../module/axiosItem";
 export default {

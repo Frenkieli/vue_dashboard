@@ -1,9 +1,11 @@
-/**
- * @description 用來獲取最新時間資訊和時間相關的callback
- * @author frenkie
- * @date 2020-06-09
- * @param <function> callback 用來放依照時間觸發的函式
-*/
+<!--
+  /**
+  * @description 用來獲取最新時間資訊和時間相關的callback
+  * @author frenkie
+  * @date 2020-06-09
+  * @param <function> callback 用來放依照時間觸發的函式
+  */
+-->
 <script>
 import momentItem from "../interface/module/momentItem";
 

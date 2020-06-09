@@ -1,8 +1,10 @@
-/**
- * @description socket相關接口
- * @author frenkie
- * @date 2020-06-08
-*/
+<!--
+  /**
+  * @description socket相關接口
+  * @author frenkie
+  * @date 2020-06-08
+  */
+-->
 <script>
 import io from "socket.io-client";
 export default {
