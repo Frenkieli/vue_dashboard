@@ -13,11 +13,7 @@
       <span class="dashboard_time_date">{{ nowTime.data }}</span>
       <span class="dashboard_time_day">{{ nowTime.day }}</span>
     </span>
-    <span class="map_systemTime_now">
-      {{ nowTime.APM }}
-      <span class="dashboard_time_hour">{{ nowTime.hour }}</span>時
-      <span class="dashboard_time_minutes">{{ nowTime.minutes }}</span>分
-    </span>
+    <span class="map_systemTime_now">{{ nowTime.APM }}<span class="dashboard_time_hour">{{ nowTime.hour }}</span>時<span class="dashboard_time_minutes">{{ nowTime.minutes }}</span>分</span>
   </div>
 </template>
 

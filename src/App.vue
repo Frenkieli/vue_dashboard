@@ -17,7 +17,16 @@
         left: value.style.left + 'px',
         top: value.style.top + 'px',
       }"/>
-
+    <mapImageItem 
+    v-for="(value, index) in dashboardData.mapItem" 
+    :imageSrc = "dashboardData.mapImg[index]"
+    class="map_item"
+    :key="value._id + index"
+    :style="{
+      left: value.style.left + 'px',
+      top: value.style.top + 'px',
+      width: value.style.width + 'px'
+    }"/>
   </div>
 </template>
 <script>
@@ -34,6 +43,7 @@ import "./assets/lib/css/reset.css";
 
 //components
 import systemTimeItem from "./components/mapSystemTime";
+import mapImageItem from "./components/mapImageItem";
 
 
 import getStartData from "./model/startData";
@@ -49,6 +59,10 @@ export default {
     return {};
   },
   components: {
+    mapImageItem: mapImageItem,
+
+
+
     map_systemTime: systemTimeItem,
     map_total: systemTimeItem,
     map_mentotal: systemTimeItem,
@@ -81,10 +95,10 @@ export default {
   height: 100vh;
   font-family: arial, Microsoft JhengHei, sans-serif;
   line-height: 1.15;
-  .map_item{
-    padding: 10px;
-    position: absolute;
-    z-index: 1;
-  }
+}
+.map_item{
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
 }
 </style>
