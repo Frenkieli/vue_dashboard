@@ -1,19 +1,19 @@
 <template>
   <div id="app"
-  :style="{
+    :style="{
       background: 'hsla( ' + dashboardData.mapStyle.background.color + ', 100%, ' + dashboardData.mapStyle.background.bright + '%, 1' + ')',
       fontSize: dashboardData.mapStyle.itemStyle.textStyle.fontSize + 'px',
       color: 'hsla( ' + dashboardData.mapStyle.itemStyle.textStyle.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.textStyle.bright + '%, ' + dashboardData.mapStyle.itemStyle.textStyle.opacity + ')'
-    }">
+  }">
     <mapImageItem 
-    v-for="(value, index) in dashboardData.mapItem" 
-    :imageSrc = "dashboardData.mapImg[index]"
-    class="map_item"
-    :key="value._id + index"
-    :style="{
-      left: value.style.left + 'px',
-      top: value.style.top + 'px',
-      width: value.style.width + 'px'
+      v-for="(value, index) in dashboardData.mapItem" 
+      :imageSrc = "dashboardData.mapImg[index]"
+      class="map_item"
+      :key="value._id + index"
+      :style="{
+        left: value.style.left + 'px',
+        top: value.style.top + 'px',
+        width: value.style.width + 'px'
     }"/>
     <mapStartItem 
       class="map_item" 
@@ -21,7 +21,7 @@
       :style="{
         left: dashboardData.home.style.left + 'px',
         top: dashboardData.home.style.top + 'px',
-      }"/>
+    }"/>
     <component 
       v-for="(value, index) in dashboardData.countItem" 
       class="map_item"
@@ -35,26 +35,33 @@
         left: value.style.left + 'px',
         top: value.style.top + 'px',
         border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
-      }"/>
+    }"/>
     <maptoiletItem 
-    v-for="(value, index) in dashboardData.doorDeviceItem" 
-    class="map_item"
-    :data = "value"
-    :width = "dashboardData.mapStyle.toiletSize"
-    :key="index"
-    :style="{
-      left: value.left + 'px',
-      top: value.top + 'px',
+      v-for="(value, index) in dashboardData.doorDeviceItem" 
+      class="map_item"
+      :data = "value"
+      :width = "dashboardData.mapStyle.toiletSize"
+      :key="index"
+      :style="{
+        left: value.left + 'px',
+        top: value.top + 'px',
+    }"/>
+    <mapTotalItem 
+      class="map_item"
+      :style="{
+        left: dashboardData.countTotalItem.style.left + 'px',
+        top: dashboardData.countTotalItem.style.top + 'px',
+        border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
     }"/>
     <mapSystemInfoItem 
-    v-for="(value, index) in systemInfoData"
-    class="map_item"
-    :data="value"
-    :key="value._id + index"
-    :style="{
-      left: value.style.left + 'px',
-      top: value.style.top + 'px',
-      border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
+      v-for="(value, index) in systemInfoData"
+      class="map_item"
+      :data="value"
+      :key="value._id + index"
+      :style="{
+        left: value.style.left + 'px',
+        top: value.style.top + 'px',
+        border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
     }"/>
   </div>
   
@@ -78,6 +85,7 @@ import mapImageItem from "./components/mapImageItem";
 import mapCountItem from "./components/mapCountItem";
 import maptoiletItem from "./components/maptoiletItem";
 import mapSystemInfoItem from "./components/mapSystemInfoItem";
+import mapTotalItem from "./components/mapTotalItem";
 
 //model
 import getStartData from "./model/startData";
@@ -93,6 +101,7 @@ export default {
     return {};
   },
   components: {
+    mapTotalItem: mapTotalItem,
     mapStartItem: mapStartItem,
     mapImageItem: mapImageItem,
     maptoiletItem: maptoiletItem,

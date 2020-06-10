@@ -1,3 +1,10 @@
+<!--
+  /**
+  * @description 顯示面板組件
+  * @author frenkie
+  * @date 2020-06-09
+  */
+-->
 <template>
   <div
     class="map_systemInfo"

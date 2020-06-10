@@ -8,9 +8,9 @@
 <template>
   <div class="map_count">
     {{ toiletTitle[data._id] }}廁所:
-    <span>{{ toiletQuantity[data._id].total }}</span>(使用中:
-    <span>{{ toiletQuantity[data._id].used }}</span>空位:
-    <span>{{ toiletQuantity[data._id].total - toiletQuantity[data._id].used }}</span>)
+    <span>{{ toiletQuantity[data._id].total }}</span> (使用中:
+    <span>{{ toiletQuantity[data._id].used }}</span> 空位:
+    <span>{{ toiletQuantity[data._id].total - toiletQuantity[data._id].used }}</span> )
   </div>
 </template>
 

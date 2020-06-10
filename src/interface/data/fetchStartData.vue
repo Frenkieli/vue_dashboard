@@ -16,7 +16,7 @@ export default {
       let dashboardProperty = [];
       let dashboardMapStyle = [];
       let dashboardMapImg = [];
-      let dashboardCountTotalItem = [];
+      let dashboardCountTotalItem = {};
       let dashboardCountItem = [];
       let dashboardMapItem = [];
       let dashboardPropertyItem = [];
@@ -52,7 +52,7 @@ export default {
             dashboardMapItem.push(v);
           }else if(itemID[0] === "map" && itemID.length === 2){
             if(itemID[1] === 'total'){
-              dashboardCountTotalItem.push(v);
+              dashboardCountTotalItem = v;
             }else{
               dashboardCountItem.push(v);
             }
