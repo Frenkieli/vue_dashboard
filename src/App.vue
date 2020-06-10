@@ -10,6 +10,7 @@
       class="map_item"
       :data = "value"
       :nowTime = "nowTime"
+      :toiletQuantity = "toiletQuantity"
       :is="value._id"
       :ref="value._id + index" 
       :key="value._id + index"
@@ -28,6 +29,7 @@
       width: value.style.width + 'px'
     }"/>
   </div>
+  
 </template>
 <script>
 
@@ -44,8 +46,9 @@ import "./assets/lib/css/reset.css";
 //components
 import systemTimeItem from "./components/mapSystemTime";
 import mapImageItem from "./components/mapImageItem";
+import mapCountItem from "./components/mapCountItem";
 
-
+//model
 import getStartData from "./model/startData";
 import nowTime from "./model/nowTime";
 
@@ -60,15 +63,13 @@ export default {
   },
   components: {
     mapImageItem: mapImageItem,
-
-
-
     map_systemTime: systemTimeItem,
-    map_total: systemTimeItem,
-    map_mentotal: systemTimeItem,
-    map_womentotal: systemTimeItem,
-    map_parenttotal : systemTimeItem,
-    map_disabledtotal: systemTimeItem,
+
+    map_total: mapCountItem,
+    map_mentotal: mapCountItem,
+    map_womentotal: mapCountItem,
+    map_parenttotal : mapCountItem,
+    map_disabledtotal: mapCountItem,
   },
   beforeCreate(){
   },

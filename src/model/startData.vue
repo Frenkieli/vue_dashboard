@@ -7,8 +7,9 @@
 -->
 <script>
 import fetchStartData from "../interface/data/fetchStartData";
+import countToiletQuantity from '../controller/countToiletQuantity';
 export default {
-  extends: fetchStartData,
+  mixins: [fetchStartData, countToiletQuantity],
   name: "startData",
   data() {
     return {

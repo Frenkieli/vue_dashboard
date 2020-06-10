@@ -27,8 +27,6 @@ export default {
     return {
       time: false
     };
-  },
-  methods: {
   }
 };
 </script>
