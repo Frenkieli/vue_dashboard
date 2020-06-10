@@ -5,6 +5,23 @@
       fontSize: dashboardData.mapStyle.itemStyle.textStyle.fontSize + 'px',
       color: 'hsla( ' + dashboardData.mapStyle.itemStyle.textStyle.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.textStyle.bright + '%, ' + dashboardData.mapStyle.itemStyle.textStyle.opacity + ')'
     }">
+    <mapImageItem 
+    v-for="(value, index) in dashboardData.mapItem" 
+    :imageSrc = "dashboardData.mapImg[index]"
+    class="map_item"
+    :key="value._id + index"
+    :style="{
+      left: value.style.left + 'px',
+      top: value.style.top + 'px',
+      width: value.style.width + 'px'
+    }"/>
+    <mapStartItem 
+      class="map_item" 
+      :data = "dashboardData.home"       
+      :style="{
+        left: dashboardData.home.style.left + 'px',
+        top: dashboardData.home.style.top + 'px',
+      }"/>
     <component 
       v-for="(value, index) in dashboardData.countItem" 
       class="map_item"
@@ -18,16 +35,6 @@
         left: value.style.left + 'px',
         top: value.style.top + 'px',
       }"/>
-    <mapImageItem 
-    v-for="(value, index) in dashboardData.mapItem" 
-    :imageSrc = "dashboardData.mapImg[index]"
-    class="map_item"
-    :key="value._id + index"
-    :style="{
-      left: value.style.left + 'px',
-      top: value.style.top + 'px',
-      width: value.style.width + 'px'
-    }"/>
     <maptoiletItem 
     v-for="(value, index) in dashboardData.doorDeviceItem" 
     class="map_item"
@@ -54,6 +61,7 @@ import "./assets/lib/css/reset.css";
 // import socketItem from "./interface/module/socketItem";
 
 //components
+import mapStartItem from "./components/mapStartItem";
 import systemTimeItem from "./components/mapSystemTime";
 import mapImageItem from "./components/mapImageItem";
 import mapCountItem from "./components/mapCountItem";
@@ -73,6 +81,7 @@ export default {
     return {};
   },
   components: {
+    mapStartItem: mapStartItem,
     mapImageItem: mapImageItem,
     maptoiletItem: maptoiletItem,
     map_systemTime: systemTimeItem,
@@ -83,12 +92,10 @@ export default {
     map_parenttotal : mapCountItem,
     map_disabledtotal: mapCountItem,
   },
-  beforeCreate(){
-  },
-  async created() {
+  created() {
     let vm = this;
     // vm.connectSocket();
-    await vm.getStartData().then(()=>{
+    vm.getStartData().then(()=>{
       console.log('要印的資料', vm.dashboardData)
     });
     vm.setIntervalInit(function(){});

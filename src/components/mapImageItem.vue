@@ -7,7 +7,7 @@
 -->
 <template>
   <div class="dashboard_Map_Map">
-    <img :src="imageSrc" />
+    <img :src="imageSrc" draggable="false"/>
   </div>
 </template>
 

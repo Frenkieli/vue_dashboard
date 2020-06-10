@@ -12,7 +12,7 @@ export default {
   name: "fetchStartData",
   methods: {
     fetchStartData() {
-      let dashboardHome = [];
+      let dashboardHome = {};
       let dashboardProperty = [];
       let dashboardMapStyle = [];
       let dashboardMapImg = [];
@@ -57,7 +57,7 @@ export default {
               dashboardCountItem.push(v);
             }
           }else if(itemID.length === 1){
-            dashboardHome.push(v);
+            dashboardHome= v;
           }
         });
         return {

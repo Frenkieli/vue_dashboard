@@ -40,6 +40,12 @@ export default {
             }
           }
         },
+        home: {
+          style: {
+            top: 0,
+            left: 0
+          }
+        },
         mapImg: [],
         countItem: [],
         mapItem: [],
