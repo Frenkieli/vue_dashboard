@@ -34,6 +34,7 @@
       :style="{
         left: value.style.left + 'px',
         top: value.style.top + 'px',
+        border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
       }"/>
     <maptoiletItem 
     v-for="(value, index) in dashboardData.doorDeviceItem" 
@@ -53,6 +54,7 @@
     :style="{
       left: value.style.left + 'px',
       top: value.style.top + 'px',
+      border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
     }"/>
   </div>
   

@@ -2,7 +2,6 @@
   <div
     class="map_systemInfo"
     id="map_systemmenInfo_0"
-    style="left: 95px; top: 107px; color: rgb(255, 255, 255); background: rgba(255, 213, 0, 0); border-color: rgba(255, 213, 0, 0); font-size: 24px; border-width: 1px;"
   >
     <div class="map_systemInfo_img">
       <img :src="'./images/dashboard/' + imageSrc +'.png'" draggable="false" />
