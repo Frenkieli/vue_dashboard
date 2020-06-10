@@ -18,6 +18,7 @@ export default {
       // port: '3000/',
       axiosItem: axios.create({
         baseURL: location.protocol + '//' + location.hostname + (location.port ? (':' + location.port) : '') + '/'
+        // baseURL: 'http://localhost:3000/'
       })
     };
   },

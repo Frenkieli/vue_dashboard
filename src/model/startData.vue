@@ -8,8 +8,9 @@
 <script>
 import fetchStartData from "../interface/data/fetchStartData";
 import countToiletQuantity from '../controller/countToiletQuantity';
+import countToiletProperty from '../controller/countToiletProperty';
 export default {
-  mixins: [fetchStartData, countToiletQuantity],
+  mixins: [fetchStartData, countToiletQuantity, countToiletProperty],
   name: "startData",
   data() {
     return {
@@ -56,7 +57,12 @@ export default {
   },
   methods: {
     async getStartData() {
-      this.dashboardData = await this.fetchStartData();
+      let vm = this;
+      await vm.fetchStartData().then(res => {
+        vm.dashboardData = res;
+        vm.deviceValueData();
+        console.log(vm);
+      });
     }
   }
 };

@@ -45,6 +45,15 @@
       left: value.left + 'px',
       top: value.top + 'px',
     }"/>
+    <mapSystemInfoItem 
+    v-for="(value, index) in systemInfoData"
+    class="map_item"
+    :data="value"
+    :key="value._id + index"
+    :style="{
+      left: value.style.left + 'px',
+      top: value.style.top + 'px',
+    }"/>
   </div>
   
 </template>
@@ -66,6 +75,7 @@ import systemTimeItem from "./components/mapSystemTime";
 import mapImageItem from "./components/mapImageItem";
 import mapCountItem from "./components/mapCountItem";
 import maptoiletItem from "./components/maptoiletItem";
+import mapSystemInfoItem from "./components/mapSystemInfoItem";
 
 //model
 import getStartData from "./model/startData";
@@ -85,6 +95,7 @@ export default {
     mapImageItem: mapImageItem,
     maptoiletItem: maptoiletItem,
     map_systemTime: systemTimeItem,
+    mapSystemInfoItem: mapSystemInfoItem,
 
     map_total: mapCountItem,
     map_mentotal: mapCountItem,
