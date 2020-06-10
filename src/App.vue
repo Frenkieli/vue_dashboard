@@ -28,6 +28,16 @@
       top: value.style.top + 'px',
       width: value.style.width + 'px'
     }"/>
+    <maptoiletItem 
+    v-for="(value, index) in dashboardData.doorDeviceItem" 
+    class="map_item"
+    :data = "value"
+    :width = "dashboardData.mapStyle.toiletSize"
+    :key="index"
+    :style="{
+      left: value.left + 'px',
+      top: value.top + 'px',
+    }"/>
   </div>
   
 </template>
@@ -47,6 +57,7 @@ import "./assets/lib/css/reset.css";
 import systemTimeItem from "./components/mapSystemTime";
 import mapImageItem from "./components/mapImageItem";
 import mapCountItem from "./components/mapCountItem";
+import maptoiletItem from "./components/maptoiletItem";
 
 //model
 import getStartData from "./model/startData";
@@ -63,6 +74,7 @@ export default {
   },
   components: {
     mapImageItem: mapImageItem,
+    maptoiletItem: maptoiletItem,
     map_systemTime: systemTimeItem,
 
     map_total: mapCountItem,
