@@ -9,9 +9,10 @@
 import fetchStartData from "../interface/data/fetchStartData";
 import countToiletQuantity from '../controller/countToiletQuantity';
 import countToiletProperty from '../controller/countToiletProperty';
+import bindToiletData from '../controller/bindToiletData';
 import socketController from '../controller/socketController';
 export default {
-  mixins: [fetchStartData, countToiletQuantity, countToiletProperty, socketController],
+  mixins: [fetchStartData, bindToiletData, countToiletQuantity, countToiletProperty, socketController],
   name: "startData",
   data() {
     return {

@@ -37,14 +37,14 @@
         border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
     }"/>
     <maptoiletItem 
-      v-for="(value, index) in dashboardData.doorDeviceItem" 
+      v-for="(value, index) in toiletItem" 
       class="map_item"
       :data = "value"
       :width = "dashboardData.mapStyle.toiletSize"
       :key="index"
       :style="{
-        left: value.left + 'px',
-        top: value.top + 'px',
+        left: value.style.left + 'px',
+        top: value.style.top + 'px',
     }"/>
     <mapTotalItem 
       class="map_item"

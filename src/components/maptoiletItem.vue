@@ -10,7 +10,7 @@
     <div
       class="map_toilet_item_sort"
       :style="{
-        transform: data.transform,
+        transform: data.style.transform,
         width: width + 'px',
         backgroundImage: 'url(./images/dashboard/' + (data.isSit ? 'sit' : 'squat') + (data.value === 1 ? '-use' : '') + '.png)'
       }"

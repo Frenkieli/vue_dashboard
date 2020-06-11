@@ -44,7 +44,6 @@ export default {
               gender: v.style.gender,
               isSit: v.style.isSit,
               transform: v.style.transform,
-              value: 0
             };
           } else if (itemID[0] === "map" && itemID.length === 3) {
             dashboardPropertyItem.push(v);

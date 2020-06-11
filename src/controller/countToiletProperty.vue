@@ -6,7 +6,7 @@
   */
 -->
 <script>
-import deviceValueControl from "../controller/deviceValueControl";
+import deviceValueControl from "./deviceValueControl";
 export default {
   extends: deviceValueControl,
   name: "countToiletProperty",

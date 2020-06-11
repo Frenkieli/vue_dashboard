@@ -6,14 +6,14 @@
   */
 -->
 <script>
-import deviceValueControl from "../controller/deviceValueControl";
+import bindToiletData from "./bindToiletData";
 export default {
-  extends: deviceValueControl,
+  extends: bindToiletData,
   name: "countToiletQuantity",
   computed: {
     toiletQuantity: function() {
       let vm = this;
-      let doorDeviceItem = vm.dashboardData.doorDeviceItem;
+      let toiletItem = vm.toiletItem;
       let countData = {
         map_mentotal: {
           total: 0,
@@ -32,12 +32,12 @@ export default {
           used: 0
         }
       };
-      for (let key in doorDeviceItem) {
-        countData["map_" + doorDeviceItem[key].gender + "total"].total++;
-        if (doorDeviceItem[key].value === 1) {
-          countData["map_" + doorDeviceItem[key].gender + "total"].used++;
+      toiletItem.forEach(v=>{
+        countData["map_" + v.gender + "total"].total++;
+        if (v.value === 1) {
+          countData["map_" + v.gender + "total"].used++;
         }
-      }
+      })
       return countData;
     }
   }
