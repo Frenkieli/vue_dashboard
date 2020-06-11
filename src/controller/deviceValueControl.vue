@@ -2,7 +2,7 @@
 /**
   * @description 將所有用到的設備攤平給socket會入資料時可以簡單使用
   * @author frenkie
-  * @date 2020-06-10
+  * @date 2020-06-11
   */
 -->
 <script>

@@ -2,7 +2,7 @@
   /**
   * @description socket主要事件註冊與使用
   * @author frenkie
-  * @date 2020-06-10
+  * @date 2020-06-11
   */
 -->
 <script>

@@ -2,7 +2,7 @@
   /**
   * @description 將廁所使用數據與及時數據作綁訂
   * @author frenkie
-  * @date 2020-06-10
+  * @date 2020-06-11
   */
 -->
 <script>
