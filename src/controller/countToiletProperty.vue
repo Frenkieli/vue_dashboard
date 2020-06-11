@@ -6,13 +6,10 @@
   */
 -->
 <script>
+import deviceValueControl from "../controller/deviceValueControl";
 export default {
+  extends: deviceValueControl,
   name: "countToiletProperty",
-  data(){
-    return {
-      valueData: {},
-    }
-  },
   computed: {
     systemInfoData : function (){
       let vm = this;
@@ -44,16 +41,6 @@ export default {
     }
   },
   methods: {
-    deviceValueData(){
-      let vm = this;
-      vm.dashboardData.property.forEach(v=>{
-        for(let key in v){
-          if(key !== '_id' && key !== 'name' && key !== 'type'){
-            vm.$set(vm.valueData, [v[key]] , {value: 0});
-          }
-        }
-      })
-    }
   }
 };
 </script>

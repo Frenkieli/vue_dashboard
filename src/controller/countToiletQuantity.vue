@@ -6,7 +6,9 @@
   */
 -->
 <script>
+import deviceValueControl from "../controller/deviceValueControl";
 export default {
+  extends: deviceValueControl,
   name: "countToiletQuantity",
   computed: {
     toiletQuantity: function() {
