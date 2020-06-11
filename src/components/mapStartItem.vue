@@ -8,7 +8,7 @@
 <template>
   <div class="map_dashboard_item">
     <div class="map_dashboard_item_img">
-      <img src="../assets/images/dashboard/star.svg" draggable="false" />
+      <img :src="'./images/dashboard/star.svg'" draggable="false" />
     </div>
   </div>
 </template>

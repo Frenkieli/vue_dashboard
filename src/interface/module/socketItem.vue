@@ -18,11 +18,11 @@ export default {
     connectSocket() {
       let vm = this;
       
-      // let ServerIP = location.hostname;
-      // let ServerPort = location.port;
-      // vm.socketio = io(ServerIP + ":" + ServerPort);
+      let ServerIP = location.hostname;
+      let ServerPort = location.port;
+      vm.socketio = io(ServerIP + ":" + ServerPort);
 
-      vm.socketio = io("localhost" + ":" + "3000");
+      // vm.socketio = io("localhost" + ":" + "3000");
       vm.socketio.on('connect', vm.onConnect);
       vm.socketio.on('disconnect', vm.onDisconnect);
     },

@@ -12,17 +12,17 @@ export default {
   name: "fetchStartData",
   methods: {
     fetchStartData() {
-      let dashboardHome = {};
+      let dashboardHome = [];
       let dashboardProperty = [];
       let dashboardMapStyle = [];
       let dashboardMapImg = [];
-      let dashboardCountTotalItem = {};
+      let dashboardCountTotalItem = [];
       let dashboardCountItem = [];
       let dashboardMapItem = [];
       let dashboardPropertyItem = [];
       let dashboardDoorDeviceItem = {};
-      // return this.axiosGet("toilet/toiletInfo/5ea24eec0ea58823cc92b16a").then(res => {
-      return this.axiosGet("data.json").then(res => {
+      return this.axiosGet("toilet/toiletInfo/5ea24eec0ea58823cc92b16a").then(res => {
+      // return this.axiosGet("data.json").then(res => {
         // console.log("獲取啟始資料:");
         // console.log(res.data);
         let dashboardData = res.data;
@@ -51,12 +51,12 @@ export default {
             dashboardMapItem.push(v);
           }else if(itemID[0] === "map" && itemID.length === 2){
             if(itemID[1] === 'total'){
-              dashboardCountTotalItem = v;
+              dashboardCountTotalItem.push(v);
             }else{
               dashboardCountItem.push(v);
             }
           }else if(itemID.length === 1){
-            dashboardHome= v;
+            dashboardHome.push(v);
           }
         });
         return {

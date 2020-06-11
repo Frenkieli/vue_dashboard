@@ -103,7 +103,7 @@ export default {
     },
     CO2: function() {
       let vm = this;
-      return vm.data.property.CO2 ? vm.checkQuality(vm.CO2Condition, vm.data.property.CO2.value) : {str: "--"};
+      return vm.data.property.CO2 ? vm.checkQuality(vm.CO2Condition, vm.data.property.CO2.value / 100) : {str: "--"};
     },
     NH3: function() {
       let vm = this;
@@ -122,17 +122,17 @@ export default {
       };
       if (value >= condition.bad) {
         data = {
-          str: "汙染",
+          str: "有害",
           color: "#f00"
         };
       } else if (value >= condition.soso) {
         data = {
-          str: "良",
+          str: "普通",
           color: "#ff0"
         };
       } else {
         data = {
-          str: "優秀",
+          str: "正常",
           color: "#0f0"
         };
       }

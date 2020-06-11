@@ -12,11 +12,13 @@
         width: value.style.width + 'px'
     }"/>
     <mapStartItem 
+      v-for="(value, index) in dashboardData.home" 
       class="map_item" 
-      :data = "dashboardData.home"       
+      :key="value._id + index"
+      :data = "value"       
       :style="{
-        left: dashboardData.home.style.left + 'px',
-        top: dashboardData.home.style.top + 'px',
+        left: value.style.left + 'px',
+        top: value.style.top + 'px',
     }"/>
     <component 
       v-for="(value, index) in dashboardData.countItem" 
@@ -30,7 +32,8 @@
       :style="{
         left: value.style.left + 'px',
         top: value.style.top + 'px',
-        border: itemBorderStyle
+        border: itemBorderStyle,
+        background: itembackgroundStyle
     }"/>
     <maptoiletItem 
       v-for="(value, index) in toiletItem" 
@@ -43,11 +46,14 @@
         top: value.style.top + 'px',
     }"/>
     <mapTotalItem 
+    v-for="(value, index) in dashboardData.countTotalItem" 
       class="map_item"
+      :key="value._id + index"
       :style="{
-        left: dashboardData.countTotalItem.style.left + 'px',
-        top: dashboardData.countTotalItem.style.top + 'px',
-        border: itemBorderStyle
+        left: value.style.left + 'px',
+        top: value.style.top + 'px',
+        border: itemBorderStyle,
+        background: itembackgroundStyle
     }"/>
     <mapSystemInfoItem 
       v-for="(value, index) in systemInfoData"
@@ -57,7 +63,8 @@
       :style="{
         left: value.style.left + 'px',
         top: value.style.top + 'px',
-        border: itemBorderStyle
+        border: itemBorderStyle,
+        background: itembackgroundStyle
     }"/>
   </div>
   
@@ -106,6 +113,11 @@ export default {
       let vm = this;
       let style = vm.dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + vm.dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + vm.dashboardData.mapStyle.itemStyle.border.bright + '%, ' + vm.dashboardData.mapStyle.itemStyle.border.opacity + ')'
       return style;
+    },
+    itembackgroundStyle: function(){
+      let vm = this;
+      let style = 'hsla( ' + vm.dashboardData.mapStyle.itemStyle.background.color + ', 100%, ' + vm.dashboardData.mapStyle.itemStyle.background.bright + '%, ' + vm.dashboardData.mapStyle.itemStyle.background.opacity + ')'
+      return style;
     }
   },
   components: {
@@ -144,6 +156,7 @@ export default {
   height: 100vh;
   font-family: arial, Microsoft JhengHei, sans-serif;
   line-height: 1.15;
+  overflow: hidden;
 }
 .map_item{
   padding: 10px;

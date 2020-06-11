@@ -43,18 +43,8 @@ export default {
             }
           }
         },
-        home: {
-          style: {
-            top: 0,
-            left: 0
-          }
-        },
-        countTotalItem: {
-          style: {
-            top: 0,
-            left: 0
-          }
-        },
+        home: [],
+        countTotalItem: [],
         mapImg: [],
         countItem: [],
         mapItem: [],
