@@ -1,10 +1,6 @@
 <template>
   <div id="app"
-    :style="{
-      background: 'hsla( ' + dashboardData.mapStyle.background.color + ', 100%, ' + dashboardData.mapStyle.background.bright + '%, 1' + ')',
-      fontSize: dashboardData.mapStyle.itemStyle.textStyle.fontSize + 'px',
-      color: 'hsla( ' + dashboardData.mapStyle.itemStyle.textStyle.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.textStyle.bright + '%, ' + dashboardData.mapStyle.itemStyle.textStyle.opacity + ')'
-  }">
+    :style="dashboardBackgroundStyle">
     <mapImageItem 
       v-for="(value, index) in dashboardData.mapItem" 
       :imageSrc = "dashboardData.mapImg[index]"
@@ -34,7 +30,7 @@
       :style="{
         left: value.style.left + 'px',
         top: value.style.top + 'px',
-        border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
+        border: itemBorderStyle
     }"/>
     <maptoiletItem 
       v-for="(value, index) in toiletItem" 
@@ -51,7 +47,7 @@
       :style="{
         left: dashboardData.countTotalItem.style.left + 'px',
         top: dashboardData.countTotalItem.style.top + 'px',
-        border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
+        border: itemBorderStyle
     }"/>
     <mapSystemInfoItem 
       v-for="(value, index) in systemInfoData"
@@ -61,7 +57,7 @@
       :style="{
         left: value.style.left + 'px',
         top: value.style.top + 'px',
-        border: dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + dashboardData.mapStyle.itemStyle.border.bright + '%, ' + dashboardData.mapStyle.itemStyle.border.opacity + ')'
+        border: itemBorderStyle
     }"/>
   </div>
   
@@ -95,6 +91,22 @@ export default {
   name: "App",
   data() {
     return {};
+  },
+  computed:{
+    dashboardBackgroundStyle: function(){
+      let vm = this;
+      let style = {
+        background: 'hsla( ' + vm.dashboardData.mapStyle.background.color + ', 100%, ' + vm.dashboardData.mapStyle.background.bright + '%, 1' + ')',
+        fontSize: vm.dashboardData.mapStyle.itemStyle.textStyle.fontSize + 'px',
+        color: 'hsla( ' + vm.dashboardData.mapStyle.itemStyle.textStyle.color + ', 100%, ' + vm.dashboardData.mapStyle.itemStyle.textStyle.bright + '%, ' + vm.dashboardData.mapStyle.itemStyle.textStyle.opacity + ')'
+      }
+      return style
+    },
+    itemBorderStyle: function(){
+      let vm = this;
+      let style = vm.dashboardData.mapStyle.itemStyle.border.width + 'px solid hsla( ' + vm.dashboardData.mapStyle.itemStyle.border.color + ', 100%, ' + vm.dashboardData.mapStyle.itemStyle.border.bright + '%, ' + vm.dashboardData.mapStyle.itemStyle.border.opacity + ')'
+      return style;
+    }
   },
   components: {
     mapTotalItem: mapTotalItem,

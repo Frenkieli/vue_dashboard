@@ -21,11 +21,9 @@ export default {
           if(propertyItem[i].style.infoId === property[j]._id){
             let propertyData = {};
             for(let key in property[j]){
-              for(let valueKey in vm.valueData){
-                if(valueKey === property[j][key]){
-                  propertyData[key] = vm.valueData[valueKey]
-                  break;
-                }
+              let deviceValue = vm.checkKeyInData(property[j][key]);
+              if(deviceValue){
+                propertyData[key] = deviceValue
               }
             }
             dashboardData.push({

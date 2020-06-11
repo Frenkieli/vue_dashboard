@@ -26,6 +26,15 @@ export default {
       for(let key in vm.dashboardData.doorDeviceItem){
         vm.$set(vm.valueData, [key.replace('_map', '')], { value: 0 });
       }
+    },
+    checkKeyInData(key){
+      let vm = this;
+      for(let valuekey in vm.valueData){
+        if(key === valuekey){
+          return vm.valueData[valuekey]
+        }
+      }
+      return false;
     }
   }
 };
