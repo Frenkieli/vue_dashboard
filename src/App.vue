@@ -75,9 +75,6 @@
 
 import "./assets/lib/css/reset.css";
 
-//moduleInterface
-// import socketItem from "./interface/module/socketItem";
-
 //components
 import mapStartItem from "./components/mapStartItem";
 import systemTimeItem from "./components/mapSystemTime";
@@ -95,7 +92,6 @@ import nowTime from "./model/nowTime";
 export default {
   // extends: socketItem,
   mixins: [getStartData, nowTime],
-  // mixins: [socketItem, getStartData, nowTime],
   name: "App",
   data() {
     return {};
@@ -116,7 +112,6 @@ export default {
   },
   created() {
     let vm = this;
-    // vm.connectSocket();
     vm.getStartData().then(()=>{
       console.log('要印的資料', vm.dashboardData)
     });

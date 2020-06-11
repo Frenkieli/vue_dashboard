@@ -9,8 +9,9 @@
 import fetchStartData from "../interface/data/fetchStartData";
 import countToiletQuantity from '../controller/countToiletQuantity';
 import countToiletProperty from '../controller/countToiletProperty';
+import socketController from '../controller/socketController';
 export default {
-  mixins: [fetchStartData, countToiletQuantity, countToiletProperty],
+  mixins: [fetchStartData, countToiletQuantity, countToiletProperty, socketController],
   name: "startData",
   data() {
     return {
@@ -47,6 +48,12 @@ export default {
             left: 0
           }
         },
+        countTotalItem: {
+          style: {
+            top: 0,
+            left: 0
+          }
+        },
         mapImg: [],
         countItem: [],
         mapItem: [],
@@ -58,10 +65,11 @@ export default {
   methods: {
     async getStartData() {
       let vm = this;
+      vm.socketInit();
       await vm.fetchStartData().then(res => {
         vm.dashboardData = res;
         vm.deviceValueData();
-        console.log(vm);
+        // console.log(vm);
       });
     }
   }
